@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infográfico: Sprint de Planejamento Comercial</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        .step {
+            transition: all 0.3s ease;
+        }
+        .step.active {
+            background-color: #2563eb; /* blue-600 */
+            color: white;
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+        .step.active .step-circle {
+            background-color: white;
+            color: #2563eb;
+        }
+        .content-panel {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .content-panel.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-slate-800">
+
+    <div class="max-w-7xl mx-auto p-4 sm:p-6 lg:p-8">
+        <!-- Cabeçalho -->
+        <header class="text-center mb-12">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight">
+                Sprint de Planejamento Comercial
+            </h1>
+            <p class="mt-4 max-w-3xl mx-auto text-lg text-slate-600">
+                Uma jornada estruturada para definir metas, estratégias e um plano de ação claro para impulsionar seus resultados de vendas.
+            </p>
+        </header>
+
+        <!-- Seção de Importância -->
+        <section class="mb-16 bg-white p-8 rounded-2xl shadow-lg border border-slate-200">
+            <h2 class="text-2xl font-bold text-blue-600 mb-4 flex items-center gap-3">
+                <i class="fas fa-star"></i>
+                Por Que Esta Sprint é Fundamental?
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-slate-700">
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <h3 class="font-bold mb-2">Definir Direção</h3>
+                    <p>Identifica as melhores estratégias e estabelece objetivos claros e mensuráveis para guiar todo o projeto.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <h3 class="font-bold mb-2">Plano de Ação Claro</h3>
+                    <p>Determina metas específicas e detalha as ações necessárias para alcançá-las, garantindo que todos conheçam suas responsabilidades.</p>
+                </div>
+                <div class="bg-slate-50 p-4 rounded-lg">
+                    <h3 class="font-bold mb-2">Aumentar Assertividade</h3>
+                    <p>Prioriza a implementação de indicadores para basear decisões em dados, aumentando a chance de sucesso das ações.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Jornada da Sprint -->
+        <section>
+            <h2 class="text-3xl font-bold text-center mb-2">A Jornada da Sprint</h2>
+            <p class="text-center text-slate-600 mb-10">Navegue pelas etapas para explorar os detalhes de cada reunião.</p>
+
+            <!-- Stepper / Navegação -->
+            <div id="sprint-nav" class="flex flex-wrap justify-center gap-4 mb-10">
+                <!-- Os botões da jornada serão inseridos aqui pelo JS -->
+            </div>
+
+            <!-- Conteúdo Dinâmico -->
+            <div id="sprint-content" class="bg-white p-6 sm:p-10 rounded-2xl shadow-xl border border-slate-200 min-h-[400px]">
+                <!-- Os painéis de conteúdo de cada etapa serão inseridos aqui pelo JS -->
+            </div>
+        </section>
+
+        <!-- Conclusão e Resultados -->
+        <section class="mt-16 text-center">
+            <h2 class="text-3xl font-bold text-slate-900">Resultados Esperados e Próximos Passos</h2>
+            <p class="mt-4 max-w-2xl mx-auto text-lg text-slate-600">
+                Ao final desta sprint, sua equipe terá um plano de ação detalhado, alinhamento total e a confiança necessária para executar a estratégia com sucesso.
+            </p>
+            <a href="https://docs.google.com/spreadsheets/d/1B7-gcmZXWhy9qaoAvKCxdPDjyMaqz3xB1Cvqw6YAJUA/edit?gid=2079771934#gid=2079771934" target="_blank" rel="noopener noreferrer" 
+               class="mt-8 inline-block bg-blue-600 text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-blue-700 transition-transform hover:scale-105">
+                <i class="fas fa-table-list mr-2"></i> Acessar Template de Apoio
+            </a>
+        </section>
+    </div>
+
+    <script>
+        const sprintData = [
+            {
+                title: "Treinamento",
+                icon: "fa-chalkboard-teacher",
+                objective: "Capacitar a equipe sobre o processo de planejamento comercial e sua importância.",
+                prep: [
+                    "Preparar material de treinamento sobre planejamento comercial.",
+                    "Agendar sessão de treinamento com a equipe."
+                ],
+                execution: [
+                    "Apresentação sobre a importância do planejamento comercial.",
+                    "Treinamento sobre as etapas e ferramentas utilizadas."
+                ],
+                tasks: [
+                    "Coletar feedback sobre o treinamento.",
+                    "Ajustar o conteúdo conforme necessário."
+                ]
+            },
+            {
+                title: "Visão e Objetivos",
+                icon: "fa-bullseye",
+                objective: "Definir e validar a visão e os objetivos do planejamento comercial.",
+                prep: [
+                    "Coletar informações sobre a visão e objetivos atuais da empresa.",
+                    "Preparar um esboço para discussão."
+                ],
+                execution: [
+                    "Discussão sobre a visão e objetivos propostos.",
+                    "Validação e ajustes com base no feedback da equipe."
+                ],
+                tasks: [
+                    "Documentar a visão e os objetivos finalizados.",
+                    "Comunicar a equipe sobre as definições."
+                ]
+            },
+            {
+                title: "Metas e Indicadores",
+                icon: "fa-chart-line",
+                objective: "Estabelecer metas específicas e definir os KPIs necessários para alcançá-las.",
+                prep: [
+                    "Analisar o histórico de indicadores (se disponível).",
+                    "Preparar uma lista de possíveis metas e KPIs."
+                ],
+                execution: [
+                    "Discussão sobre as metas e KPIs propostos.",
+                    "Definição das metas e indicadores finais."
+                ],
+                tasks: [
+                    "Documentar as metas e KPIs definidos.",
+                    "Comunicar a equipe sobre as novas metas e indicadores."
+                ]
+            },
+            {
+                title: "Plano de Ação",
+                icon: "fa-tasks",
+                objective: "Detalhar as ações necessárias e definir o cronograma para alcançar as metas.",
+                prep: [
+                    "Preparar um esboço do plano de ação com ações propostas.",
+                    "Analisar a capacidade produtiva e investimentos necessários."
+                ],
+                execution: [
+                    "Discussão e detalhamento das ações propostas.",
+                    "Definição do cronograma das ações com pelo menos 3 ações por indicador."
+                ],
+                tasks: [
+                    "Documentar o plano de ação e o cronograma finalizados.",
+                    "Comunicar a equipe sobre as responsabilidades e prazos."
+                ]
+            },
+            {
+                title: "Apresentação",
+                icon: "fa-person-chalkboard",
+                objective: "Apresentar o planejamento finalizado e assegurar o alinhamento de todos.",
+                prep: [
+                    "Preparar a apresentação do planejamento comercial.",
+                    "Revisar todos os documentos e informações relevantes."
+                ],
+                execution: [
+                    "Apresentação do planejamento comercial para a equipe.",
+                    "Discussão sobre os próximos passos e expectativas."
+                ],
+                tasks: [
+                    "Documentar qualquer feedback recebido.",
+                    "Ajustar o planejamento conforme necessário."
+                ]
+            },
+            {
+                title: "Finalização",
+                icon: "fa-flag-checkered",
+                objective: "Finalizar a sprint e alinhar as expectativas futuras.",
+                prep: [
+                    "Preparar um relatório final de planejamento comercial.",
+                    "Revisar os objetivos alcançados."
+                ],
+                execution: [
+                    "Apresentação do relatório final ao cliente.",
+                    "Discussão sobre os próximos passos e manutenção do plano."
+                ],
+                tasks: [
+                    "Documentar os próximos passos e ajustes finais.",
+                    "Agendar reuniões futuras para revisão e melhorias.",
+                    "Enviar entregável final."
+                ]
+            }
+        ];
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navContainer = document.getElementById('sprint-nav');
+            const contentContainer = document.getElementById('sprint-content');
+
+            sprintData.forEach((step, index) => {
+                // Criar botão de navegação
+                const navButton = document.createElement('button');
+                navButton.className = 'step flex items-center gap-3 p-3 px-5 bg-white rounded-full shadow-md text-slate-700 font-semibold border border-slate-200';
+                navButton.innerHTML = `
+                    <span class="step-circle flex items-center justify-center w-8 h-8 rounded-full bg-slate-200 text-slate-600 font-bold text-lg transition-all">${index + 1}</span>
+                    <span>${step.title}</span>
+                `;
+                navButton.dataset.index = index;
+                navContainer.appendChild(navButton);
+
+                // Criar painel de conteúdo
+                const contentPanel = document.createElement('div');
+                contentPanel.className = 'content-panel';
+                contentPanel.dataset.index = index;
+                contentPanel.innerHTML = `
+                    <h3 class="text-2xl font-bold text-blue-600 mb-6 flex items-center gap-4"><i class="fas ${step.icon} fa-fw"></i>Reunião ${index + 1}: ${step.title}</h3>
+                    <div class="space-y-6">
+                        <div>
+                            <h4 class="font-bold text-lg mb-2 text-slate-800">🎯 Objetivo</h4>
+                            <p class="text-slate-600">${step.objective}</p>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
+                                <h4 class="font-bold text-lg mb-2 text-slate-800">📋 Preparação</h4>
+                                <ul class="list-disc list-inside space-y-1 text-slate-600">${step.prep.map(item => `<li>${item}</li>`).join('')}</ul>
+                            </div>
+                            <div class="bg-green-50 p-4 rounded-lg border border-green-100">
+                                <h4 class="font-bold text-lg mb-2 text-slate-800">🚀 Execução</h4>
+                                <ul class="list-disc list-inside space-y-1 text-slate-600">${step.execution.map(item => `<li>${item}</li>`).join('')}</ul>
+                            </div>
+                            <div class="bg-yellow-50 p-4 rounded-lg border border-yellow-100">
+                                <h4 class="font-bold text-lg mb-2 text-slate-800">✅ Tarefas</h4>
+                                <ul class="list-disc list-inside space-y-1 text-slate-600">${step.tasks.map(item => `<li>${item}</li>`).join('')}</ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                contentContainer.appendChild(contentPanel);
+            });
+
+            const navButtons = document.querySelectorAll('.step');
+            const contentPanels = document.querySelectorAll('.content-panel');
+
+            function setActiveStep(index) {
+                navButtons.forEach((btn, i) => {
+                    btn.classList.toggle('active', i == index);
+                });
+                contentPanels.forEach((panel, i) => {
+                    panel.classList.toggle('active', i == index);
+                });
+            }
+
+            navButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    setActiveStep(button.dataset.index);
+                });
+            });
+
+            // Ativar o primeiro passo por padrão
+            setActiveStep(0);
+        });
+    </script>
+</body>
+</html>
